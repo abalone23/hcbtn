@@ -1,4 +1,4 @@
-# Health Care CLassification Proposal
+# Health Care Classification Proposal
 - **Objective**
   - Health care insurance can be found in both the public and private marketplace and due to financial constraints some Americans are uninsured as well. Lack of health insurance results in worse preventive care and services for major health conditions and chronic diseases. By using a classification model on a sample US population from 2017 I propose to analyze which demographic chracteristics result in Americans having pulic, private or no health insurance. 
 - **Data**
