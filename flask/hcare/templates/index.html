@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>{{title}}</h1>
+
+<!-- <div class="table-responsive-sm"> -->
+<table class="table table-sm">
+    <thead class="thead-dark"><th scope="col">State</th><th scope="col">Total</th><th scope="col">Unemployed</th>
+                              <th scope="col">Low Income</th><th scope="col">Divorced</th><th scope="col">Undereducated</th></thead>
+    <tbody>
+        {% for state in mystates %}
+        <tr><td><a href="/states/{{ state.state_abbr }}">{{ state.state }}</a></td>
+            <td>{{ state.pct_uninsured_tot }}</td>
+            <td>{{ state.pct_uninsured_empstat_unemployed }}</td>
+            <td>{{ state.pct_uninsured_marst_divorced }}</td>
+            <td>{{ state.pct_uninsured_incbrack_low_income }}</td>
+            <td>{{ state.pct_uninsured_educ_middle_school }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- </div> -->
+{% endblock content %}

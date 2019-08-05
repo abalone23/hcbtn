@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>{{title}}</h1>
+
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Predict Health Care Coverage</legend>
+            <div class="form-group">
+                {{ form.state.label(class="form-control-label") }}
+                {% if form.state.errors or form.state.data == 's' %}
+                    {{ form.state(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.state.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.state(class="form-control form-control-lg") }}
+                {% endif %}
+        </div>
+            <div class="form-group">
+                    {{ form.age.label(class="form-control-label") }}
+                    {% if form.age.errors or form.age.data == 'a' %}
+                        {{ form.age(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.gender.label(class="form-control-label") }}
+                    {% if form.gender.errors or form.gender.data == 'g' %}
+                        {{ form.gender(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.gender.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.gender(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.race.label(class="form-control-label") }}
+                    {% if form.race.errors or form.race.data == 'r' %}
+                        {{ form.race(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.race.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.race(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.education.label(class="form-control-label") }}
+                    {% if form.education.errors or form.education.data == 'e' %}
+                        {{ form.education(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.education.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.education(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.income.label(class="form-control-label") }}
+                    {% if form.income.errors or form.income.data == 'i' %}
+                        {{ form.income(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.income.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.income(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.citizen.label(class="form-control-label") }}
+                    {% if form.citizen.errors or form.citizen.data == 'c' %}
+                        {{ form.citizen(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.citizen.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.citizen(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                    {{ form.english_ability.label(class="form-control-label") }}
+                    {% if form.english_ability.errors or form.english_ability.data == 'ea' %}
+                        {{ form.english_ability(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.english_ability.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.english_ability(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.employment.label(class="form-control-label") }}
+                {% if form.employment.errors or form.employment.data == 'es' %}
+                    {{ form.employment(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.employment.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.employment(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.marital_status.label(class="form-control-label") }}
+                {% if form.marital_status.errors or form.marital_status.data == 'ms' %}
+                    {{ form.marital_status(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.marital_status.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.marital_status(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

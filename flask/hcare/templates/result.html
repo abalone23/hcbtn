@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 style="text-align: center;">Insured Liklihood</h1>
+{% if data < 50 %}
+    <div style="text-align: center; font-weight:bold; font-size: 1000%; color: red;">{{data}}%</div>
+{% else %}
+    <div style="text-align: center; font-weight:bold; font-size: 1000%; color: green;">{{data}}%</div>
+{% endif %}
+{% endblock content %}

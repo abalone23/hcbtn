@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+    {% for s in mystate %}
+    <h1>{{ s.state }} Uninsured Rates</h1>
+    <figure class="figure">
+        <img src="{{ url_for('static', filename='/images/') }}{{ s.state_abbr.lower() }}.png" class="figure-img img-fluid rounded" alt="{{s.state}} Uninsured Rate">
+        <figcaption class="figure-caption">{{s.state}} Uninsured Rate (2017)</figcaption>
+    </figure>
+    <table class="table">
+        <thead><th>Type</th><th>Uninsured %</th></thead>
+        <tbody>
+            <tr><td>Total</td><td>{{ s.pct_uninsured_tot }}</td></tr>
+            <tr><td>Unemployed</td><td>{{ s.pct_uninsured_empstat_unemployed }}</td></tr>
+            <tr><td>Poor</td><td>{{ s.pct_uninsured_incbrack_low_income }}</td></tr>
+            <tr><td>Divorced</td><td>{{ s.pct_uninsured_marst_divorced }}</td></tr>
+            <tr><td>Undereducated</td><td>{{ s.pct_uninsured_educ_middle_school }}</td></tr>
+        </tbody>
+    </table>
+    {% endfor %}
+</div>
+{% endblock content %}
